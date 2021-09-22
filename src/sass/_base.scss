@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+$heading-font: 'tinos', serif;
+$body-text-font: 'Open Sans', sans-serif;
+$content-width: 960px;
+
+$main-color: #868244;
+$darker-color: darken($main-color, 10%);
+$lightest-color: lighten($main-color, 10%);
+$font-color: #ffffff;
+
+$center-images: true;
+
+
+@mixin mediaQ($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}

@@ -1,0 +1,97 @@
+@import "reset";
+@import "base";
+
+%heading-common {
+  font-family: $heading-font;
+}
+
+h1 {
+  @extend %heading-common;
+  color: $font-color;
+}
+
+h2 {
+  @extend %heading-common;
+}
+
+h3 {
+  @extend %heading-common;
+}
+
+img {
+  display: flex;
+}
+
+%page-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  > * {
+    max-width: $content-width;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+  }
+}
+
+.header-wrapper {
+  @extend %page-wrapper;
+  background-color: $darker-color;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+
+  a {
+    padding: 10px 20px;
+    background-color: $lightest-color;
+    min-width: fit-content;
+  }
+}
+
+.main-wrapper {
+  @extend %page-wrapper;
+  margin-bottom: 20px;
+
+  main {
+    background-color: $main-color;
+  }
+}
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $font-color;
+}
+
+#cats {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 50px;
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    @if ($center-images){
+      align-items: center;
+    }
+  }
+
+  @include mediaQ(800px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include mediaQ(500px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
