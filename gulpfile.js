@@ -4,9 +4,10 @@ const browserSync = require('browser-sync').create();
 const concat = require("gulp-concat");
 const terser = require('gulp-terser');
 const imagemin = require("gulp-imagemin");
-let resizer = require('gulp-images-resizer');
+const resizer = require('gulp-images-resizer');
 const webp = require('gulp-webp');
 const cssnano = require("gulp-cssnano");
+const babel = require('gulp-babel');
 
 // file paths to all the source files
 const srcRoot = "./src";
@@ -61,6 +62,11 @@ const copyJS = () => {
         srcPaths.js
     ).pipe(
         concat("all.js")
+    ).pipe(
+        babel({
+            // targets: {ie: 11} // works
+            presets: ['@babel/env'] // does not work
+        })
     ).pipe(
         terser()
     ).pipe(
