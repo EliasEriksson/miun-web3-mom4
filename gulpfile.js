@@ -64,8 +64,8 @@ const copyJS = () => {
         concat("all.js")
     ).pipe(
         babel({
-            // targets: {ie: 11} // works
-            presets: ['@babel/env'] // does not work
+            targets: {ie: 11} // works
+            // presets: ['@babel/env'] // does not work
         })
     ).pipe(
         terser()
